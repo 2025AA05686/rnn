@@ -258,7 +258,13 @@
 **Decisions Made**:
 - Data range: 2010-2024 (10 years) instead of 5 years → 3773 samples (better model training)
 - Data quality verified: No missing values, no outliers, clean data
-- Normalization: MinMaxScaler with range [0,1] (standard for neural networks)
+- Normalization: MinMaxScaler with range [0,1] chosen because:
+  * Standard choice for time series + neural networks
+  * No outliers in data (verified via IQR analysis)
+  * Stock prices are positive (bounded data)
+  * [0,1] range optimal for neural network activation functions
+  * Easier inverse transform for predictions back to dollar values
+  * Alternative considered: StandardScaler (would work but produces unbounded negative values)
 
 **Status**: Phase 1 is 60% complete. Next: implement create_sequences() and train/test split
 
