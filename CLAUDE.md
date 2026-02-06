@@ -52,11 +52,20 @@ Only modify TODO sections - do not change:
 ### Core Workflow
 1. **Always read IMPLEMENTATION_PLAN.md first** to understand context
 2. **PROACTIVELY UPDATE IMPLEMENTATION_PLAN.md** as you work (details below)
-3. Work phase by phase (1→2→3→4→5→6)
-4. Test each model independently before comparison
-5. Track all variables needed for JSON output
-6. Run "Restart & Run All" before submission
-7. Verify final checklist in IMPLEMENTATION_PLAN.md
+3. **Work cell-by-cell and WAIT for user review**: After each cell modification, STOP and wait for user to review, ask questions, and approve before proceeding to next cell
+4. Work phase by phase (1→2→3→4→5→6)
+5. Test each model independently before comparison
+6. Track all variables needed for JSON output
+7. Run "Restart & Run All" before submission
+8. Verify final checklist in IMPLEMENTATION_PLAN.md
+
+### Interactive Cell-by-Cell Protocol
+**CRITICAL**: After modifying ANY cell:
+1. ✅ Explain what was changed and why
+2. ✅ WAIT for user to review the code
+3. ✅ Answer any user questions
+4. ✅ Get user approval/feedback before moving to next cell
+5. ❌ DO NOT proceed to multiple cells without user confirmation
 
 ### CRITICAL: Autonomous Update Protocol (Applies Across ALL Sessions)
 
