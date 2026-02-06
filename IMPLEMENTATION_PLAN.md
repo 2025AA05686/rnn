@@ -102,15 +102,15 @@
 ---
 
 ### Phase 2: GRU Implementation 🔄 IN PROGRESS
-**Status**: In progress (20% complete)
-**Notebook Cells Modified**: 87daaa54
+**Status**: In progress (35% complete)
+**Notebook Cells Modified**: 87daaa54, dk61253vqz
 
 **Completed**:
 - ✅ Implement `build_rnn_model()` - 2 stacked GRU layers with dropout
+- ✅ Create GRU model instance (64 units → 32 units → Dense output)
+- ✅ Compile with Adam optimizer, MSE loss, MAE metric
 
 **Pending**:
-- ⬜ Create GRU model instance
-- ⬜ Compile with Adam, MSE loss, MAE metric
 - ⬜ Train and track: `rnn_initial_loss`, `rnn_final_loss`, `rnn_training_time`
 - ⬜ Predict and inverse transform
 - ⬜ Calculate: `rnn_mae`, `rnn_rmse`, `rnn_mape`, `rnn_r2`
@@ -253,6 +253,7 @@
 9. **725e3489** (Train/Test Info): Filled train_test_ratio, train_samples, test_samples dynamically
 10. **87daaa54** (Build RNN Function): Implemented build_rnn_model() - GRU only (removed LSTM)
 11. **c800bf2e** (JSON Function): Fixed rnn_model_type from "LSTM" to "GRU"
+12. **dk61253vqz** (NEW): Created and compiled GRU model instance
 
 **Values Set**:
 - dataset_name: "Apple Inc. (AAPL) Stock Prices"
