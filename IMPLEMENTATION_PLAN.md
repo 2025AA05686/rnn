@@ -266,6 +266,8 @@
 16. **fp0bjrcum3** (NEW): Made predictions on test set and inverse transformed to actual prices
 17. **43dcb302**: Calculated all 4 metrics (MAE, RMSE, MAPE, R²)
 18. **dg2vqgloo7t** (NEW): Created 3 visualizations (loss curve, predictions vs actual, residuals)
+19. **fp0bjrcum3**: Fixed inverse transform reshape error (y_test 3D → 2D)
+20. **87daaa54**: Fixed Keras warning by using Input layer instead of input_shape parameter
 
 **Values Set**:
 - dataset_name: "Apple Inc. (AAPL) Stock Prices"
