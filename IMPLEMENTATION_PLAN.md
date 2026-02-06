@@ -102,8 +102,8 @@
 ---
 
 ### Phase 2: GRU Implementation 🔄 IN PROGRESS
-**Status**: In progress (50% complete)
-**Notebook Cells Modified**: 87daaa54, dk61253vqz, vgmpmjfvr4, 02ade3a8
+**Status**: In progress (75% complete)
+**Notebook Cells Modified**: 87daaa54, dk61253vqz, vgmpmjfvr4, 02ade3a8, 1678f898, fp0bjrcum3, 43dcb302
 
 **Completed**:
 - ✅ Implement `build_rnn_model()` - 2 stacked GRU layers with dropout
@@ -111,10 +111,11 @@
 - ✅ Compile with Adam optimizer, MSE loss, MAE metric
 - ✅ Train model (100 epochs, batch_size=32, 10% validation split)
 - ✅ Track `rnn_initial_loss` and `rnn_final_loss` from history
+- ✅ Implement `calculate_mape()` function
+- ✅ Make predictions on test set and inverse transform to actual prices
+- ✅ Calculate all 4 metrics: `rnn_mae`, `rnn_rmse`, `rnn_mape`, `rnn_r2`
 
 **Pending**:
-- ⬜ Predict on test set and inverse transform
-- ⬜ Calculate: `rnn_mae`, `rnn_rmse`, `rnn_mape`, `rnn_r2`
 - ⬜ Create visualizations (loss curve, predictions, residuals)
 
 **Architecture Decisions**:
@@ -263,6 +264,9 @@
 12. **dk61253vqz** (NEW): Created and compiled GRU model instance
 13. **vgmpmjfvr4** (NEW): Trained GRU model (100 epochs, batch_size=32, 10% validation)
 14. **02ade3a8**: Tracked initial_loss and final_loss from training history
+15. **1678f898**: Implemented calculate_mape() function
+16. **fp0bjrcum3** (NEW): Made predictions on test set and inverse transformed to actual prices
+17. **43dcb302**: Calculated all 4 metrics (MAE, RMSE, MAPE, R²)
 
 **Values Set**:
 - dataset_name: "Apple Inc. (AAPL) Stock Prices"
