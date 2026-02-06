@@ -28,32 +28,31 @@
 ## Grading Requirements Checklist (20 marks total)
 
 ### Part 2: GRU Implementation (5 marks)
-- [ ] **Architecture** (2 marks): Stacked GRU with ≥2 layers
-  - Critical: Must use `layers.GRU()` with `return_sequences=True` for stacking
-- [ ] **Compilation** (1 mark): `model.compile(optimizer='adam', loss='mse')`
-- [ ] **Training** (1 mark): Track `initial_loss` and `final_loss`
-- [ ] **Metrics** (1 mark): Calculate MAE, RMSE, MAPE, R² (all >0 and valid)
+- [x] **Architecture** (2 marks): Stacked GRU with ≥2 layers ✅
+  - Critical: Must use `layers.GRU()` with `return_sequences=True` for stacking ✅
+- [x] **Compilation** (1 mark): `model.compile(optimizer='adam', loss='mse')` ✅
+- [x] **Training** (1 mark): Track `initial_loss` and `final_loss` ✅
+- [x] **Metrics** (1 mark): Calculate MAE, RMSE, MAPE, R² (all >0 and valid) ✅
 
 ### Part 3: Transformer Implementation (5 marks)
-- [ ] **Positional Encoding** (1 mark): MANDATORY - must have sin/cos formula
-  - Critical: `PE(pos,2i) = sin(pos/10000^(2i/d_model))`
-  - Critical: `PE(pos,2i+1) = cos(pos/10000^(2i/d_model))`
-- [ ] **Multi-head Attention** (2 marks): Use `layers.MultiHeadAttention(num_heads=4)`
-  - Critical: `num_heads > 1` (not single-head)
-- [ ] **Training** (1 mark): Track `initial_loss` and `final_loss`
-- [ ] **Metrics** (1 mark): Calculate MAE, RMSE, MAPE, R² (all >0 and valid)
+- [x] **Positional Encoding** (1 mark): MANDATORY - must have sin/cos formula ✅
+  - Critical: `PE(pos,2i) = sin(pos/10000^(2i/d_model))` ✅
+  - Critical: `PE(pos,2i+1) = cos(pos/10000^(2i/d_model))` ✅
+- [x] **Multi-head Attention** (2 marks): Use `layers.MultiHeadAttention(num_heads=4)` ✅
+  - Critical: `num_heads > 1` (not single-head) ✅
+- [x] **Training** (1 mark): Track `initial_loss` and `final_loss` ✅
+- [x] **Metrics** (1 mark): Calculate MAE, RMSE, MAPE, R² (all >0 and valid) ✅
 
 ### Part 3 Continued: Loss Convergence (4 marks)
-- [ ] **GRU Convergence** (2 marks):
-  - Full marks: loss reduction ≥50%
-  - Partial: loss reduction ≥20% (1 mark)
-- [ ] **Transformer Convergence** (2 marks):
-  - Full marks: loss reduction ≥50%
-  - Partial: loss reduction ≥20% (1 mark)
+- [x] **GRU Convergence** (2 marks): ✅ FULL MARKS
+  - Loss reduction: 90.6% (exceeds ≥50% requirement)
+- [x] **Transformer Convergence** (2 marks): ✅ FULL MARKS
+  - Loss reduction: 99.92% (exceeds ≥50% requirement)
 
 ### Part 4: Metrics Validation (2 marks)
-- [ ] **Both models metrics valid** (2 marks): MAE>0, RMSE>0, MAPE>0, -1≤R²≤1
-- [ ] **One model metrics valid** (1 mark)
+- [x] **Both models metrics valid** (2 marks): ✅ FULL MARKS
+  - GRU: MAE=3.61, RMSE=4.63, MAPE=1.77%, R²=0.96 ✅
+  - Transformer: MAE=4.60, RMSE=6.16, MAPE=2.16%, R²=0.93 ✅
 
 ### Part 5: Analysis (2 marks)
 - [ ] **8+ key topics covered** (2 marks) - need depth, not just mentions:
@@ -67,8 +66,17 @@
   8. Insights specific to stock prediction
 
 ### Part 6: Code Structure (2 marks)
-- [ ] **Model definitions** (1 mark): Both GRU and Transformer models defined
-- [ ] **JSON output** (1 mark): All required fields present
+- [x] **Model definitions** (1 mark): Both GRU and Transformer models defined ✅
+- [ ] **JSON output** (1 mark): All required fields present (PENDING - Phase 6)
+
+**Current Score: 14/20 marks secured**
+- Phase 1: N/A (informational)
+- Phase 2 (GRU): 5/5 marks ✅
+- Phase 3 (Transformer): 5/5 marks ✅
+- Loss Convergence: 4/4 marks ✅
+- Metrics Validation: 2/2 marks (implicit, counted in Phase 2 & 3)
+- Model Definitions: 1/1 mark ✅
+- **Remaining**: Analysis (2 marks) + JSON (1 mark) = 3 marks
 
 ---
 
@@ -135,31 +143,45 @@
 
 ---
 
-### Phase 3: Transformer Implementation ⬜ NOT STARTED
-**Status**: Not started
-**Notebook Cells Modified**: None yet
+### Phase 3: Transformer Implementation ✅ COMPLETED
+**Status**: Completed (100%)
+**Notebook Cells Modified**: 335f5f6b, 83741f21, 2db4f26b, 846c1aab, 3f9e89eb, 6a6e3fa1, e024b42c, c9d3a7f0
 
-**What needs to be done**:
-- Implement `positional_encoding()` function with sin/cos
-- Implement `build_transformer_model()` with MultiHeadAttention
-- Add positional encoding to input embeddings
-- Compile with Adam, MSE loss, MAE metric
-- Train and track: `transformer_initial_loss`, `transformer_final_loss`, `transformer_training_time`
-- Predict and inverse transform
-- Calculate: `transformer_mae`, `transformer_rmse`, `transformer_mape`, `transformer_r2`
-- Create visualizations
+**Completed**:
+- ✅ Implement `positional_encoding()` function with sin/cos formula
+- ✅ Implement `build_transformer_model()` with MultiHeadAttention (4 heads)
+- ✅ Create Transformer model instance with positional encoding
+- ✅ Compile with Adam optimizer, MSE loss, MAE metric
+- ✅ Train model (100 epochs, batch_size=32, 10% validation split)
+- ✅ Track `transformer_initial_loss` and `transformer_final_loss` from history
+- ✅ Make predictions on test set and inverse transform to actual prices
+- ✅ Calculate all 4 metrics: `transformer_mae`, `transformer_rmse`, `transformer_mape`, `transformer_r2`
+- ✅ Create visualizations (loss curve, predictions vs actual, residuals)
 
-**Architecture Decisions**:
+**Architecture Implemented**:
 - d_model: 64
 - n_heads: 4
 - n_layers: 2
 - d_ff: 256
+- Total parameters: 100,161
 - Global average pooling before output
 
-**Critical Reminders**:
-- ⚠️ MANDATORY: Must implement sin/cos positional encoding
-- ⚠️ Must use MultiHeadAttention with num_heads=4 (>1)
-- ⚠️ Must add positional encoding: `x = x + pos_enc`
+**Training Results**:
+- Initial Loss: 0.1270
+- Final Loss: 0.0001
+- **Loss Reduction: 99.92%** (exceeds ≥50% requirement - FULL MARKS!)
+- Training Time: 224.64 seconds
+
+**Performance Metrics**:
+- transformer_mae: 4.5976
+- transformer_rmse: 6.1606
+- transformer_mape: 2.1637%
+- transformer_r2: 0.9348
+
+**Critical Confirmations**:
+- ✅ Positional encoding implemented with sin/cos formula
+- ✅ MultiHeadAttention with num_heads=4 (>1)
+- ✅ Positional encoding added: `x = x + positional_encoding(seq_length, d_model)`
 
 ---
 
@@ -243,9 +265,9 @@
 
 **Template Modifications**: None yet
 
-### Session 2 (2026-02-06) - Phase 1 Implementation
+### Session 2 (2026-02-06) - Phase 1 & 2 Implementation
 **Date**: 2026-02-06
-**Changes**: Started Phase 1 - Dataset Preparation
+**Changes**: Completed Phase 1 (Dataset Preparation) and Phase 2 (GRU Implementation)
 
 **Cells Modified**:
 1. **f7883103** (Imports): Added TensorFlow/Keras imports and yfinance
@@ -294,7 +316,52 @@
   * Research shows GRU performs as well or better than LSTM on financial time series
   * Simpler gating mechanism is more robust for noisy data
 
-**Status**: Phase 1 is 60% complete. Next: implement create_sequences() and train/test split
+**GRU Results** (from latest run):
+- Initial Loss: 0.0032
+- Final Loss: 0.0003
+- **Loss Reduction: 90.6%** (exceeds ≥50% requirement - FULL MARKS!)
+- Training Time: 129.73 seconds
+- rnn_mae: 3.6101
+- rnn_rmse: 4.6301
+- rnn_mape: 1.7686%
+- rnn_r2: 0.9632
+- Total parameters: 22,305
+
+### Session 3 (2026-02-06) - Phase 3 Implementation
+**Date**: 2026-02-06
+**Changes**: Completed Phase 3 - Transformer Implementation
+
+**Cells Modified**:
+1. **335f5f6b**: Implemented positional_encoding() function with sin/cos formula
+2. **83741f21**: Implemented build_transformer_model() with MultiHeadAttention (4 heads, 2 layers)
+3. **2db4f26b**: Created and compiled Transformer model instance
+4. **846c1aab**: Trained Transformer model (100 epochs, batch_size=32, 10% validation)
+5. **3f9e89eb**: Tracked initial_loss and final_loss from training history
+6. **6a6e3fa1**: Made predictions on test set and inverse transformed to actual prices
+7. **e024b42c**: Calculated all 4 metrics (MAE, RMSE, MAPE, R²)
+8. **c9d3a7f0**: Created 3 visualizations (loss curve, predictions vs actual, residuals)
+
+**Transformer Results**:
+- Initial Loss: 0.1270
+- Final Loss: 0.0001
+- **Loss Reduction: 99.92%** (exceeds ≥50% requirement - FULL MARKS!)
+- Training Time: 224.64 seconds
+- transformer_mae: 4.5976
+- transformer_rmse: 6.1606
+- transformer_mape: 2.1637%
+- transformer_r2: 0.9348
+- Total parameters: 100,161
+
+**Key Observations**:
+- GRU outperforms Transformer on all error metrics (MAE, RMSE, MAPE, R²)
+- GRU is 42% faster to train (129.73s vs 224.64s)
+- GRU has 4.5x fewer parameters (22,305 vs 100,161)
+- Transformer achieves better loss reduction (99.92% vs 90.6%)
+- For short-term stock prediction (1-day ahead), GRU's sequential processing is more effective than Transformer's attention mechanism
+
+**Issues Encountered & Fixed**:
+- Initially converted markdown cells to code cells incorrectly - fixed by explicitly setting cell_type parameter
+- Updated CLAUDE.md with "Notebook Cell Editing Protocol" to prevent future mistakes
 
 ---
 
@@ -328,7 +395,16 @@
 
 ## Notes & Observations
 
-(Add notes here as you work through the assignment)
+### Lesson Learned - Session 3
+- **Issue**: Failed to update IMPLEMENTATION_PLAN.md continuously during Phase 3 implementation
+- **Impact**: Lost track of progress, made user frustrated
+- **Root Cause**: Ignored explicit instructions in CLAUDE.md to update the living document proactively
+- **Fix**: Updated CLAUDE.md with stricter protocols, must update after EVERY significant step
+- **Commitment**: Will update IMPLEMENTATION_PLAN.md immediately after each phase/task completion going forward
 
--
--
+### Model Performance Insights
+- GRU significantly outperforms Transformer for short-term (1-day) stock prediction
+- GRU: MAE=3.61 (21.5% better), RMSE=4.63 (24.8% better), R²=0.96 (2.9% better)
+- GRU trains 42% faster (129s vs 225s) with 4.5x fewer parameters
+- Hypothesis: Short 30-day sequences don't benefit from attention mechanism; sequential processing of GRU is more suitable
+- Transformer may excel with longer sequences (100+ days) or multivariate data
