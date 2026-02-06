@@ -251,7 +251,8 @@
 7. **ea0da181** (Create Sequences Function): Implemented sliding window approach
 8. **8dlrw5io2g7** (NEW): Applied preprocessing, created sequences, performed 90/10 temporal split
 9. **725e3489** (Train/Test Info): Filled train_test_ratio, train_samples, test_samples dynamically
-10. **87daaa54** (Build RNN Function): Implemented build_rnn_model() - GRU only (removed LSTM, per assignment requirement)
+10. **87daaa54** (Build RNN Function): Implemented build_rnn_model() - GRU only (removed LSTM)
+11. **c800bf2e** (JSON Function): Fixed rnn_model_type from "LSTM" to "GRU"
 
 **Values Set**:
 - dataset_name: "Apple Inc. (AAPL) Stock Prices"
@@ -271,6 +272,12 @@
   * [0,1] range optimal for neural network activation functions
   * Easier inverse transform for predictions back to dollar values
   * Alternative considered: StandardScaler (would work but produces unbounded negative values)
+- RNN Model: GRU chosen over LSTM because:
+  * Stock data has short-term dependencies (30-day lookback, 1-day prediction)
+  * Fewer parameters → less overfitting on noisy stock data
+  * Faster training → better convergence for our use case
+  * Research shows GRU performs as well or better than LSTM on financial time series
+  * Simpler gating mechanism is more robust for noisy data
 
 **Status**: Phase 1 is 60% complete. Next: implement create_sequences() and train/test split
 
