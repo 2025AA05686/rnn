@@ -67,6 +67,14 @@ Only modify TODO sections - do not change:
 4. ✅ Get user approval/feedback before moving to next cell
 5. ❌ DO NOT proceed to multiple cells without user confirmation
 
+### Notebook Cell Editing Protocol
+**CRITICAL**: When using NotebookEdit tool:
+1. ✅ ALWAYS verify the current cell_type before editing (check if it's "code" or "markdown")
+2. ✅ If changing cell_type from markdown to code, MUST use the cell_type parameter
+3. ✅ After editing, verify the change was applied correctly using Read tool or Bash
+4. ✅ Never assume a cell type - always check the actual notebook state
+5. ❌ DO NOT batch edit multiple cells without verifying each one individually
+
 ### CRITICAL: Autonomous Update Protocol (Applies Across ALL Sessions)
 
 **IMPLEMENTATION_PLAN.md is a LIVING DOCUMENT - update it continuously, NOT at the end.**
@@ -99,6 +107,9 @@ This enables seamless session continuity. Future Claude instances (or you in nex
 - ❌ Cleared outputs in notebook
 - ❌ Filename mismatch with BITS ID
 - ❌ Forgetting to update IMPLEMENTATION_PLAN.md as you work
+- ❌ Batch editing multiple cells without checking each one
+- ❌ Assuming cell types without verification
+- ❌ Not being thorough and careful with each step
 
 ## Session Continuity
 When resuming work:
