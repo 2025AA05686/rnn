@@ -101,23 +101,26 @@
 
 ---
 
-### Phase 2: GRU Implementation ⬜ NOT STARTED
-**Status**: Not started
-**Notebook Cells Modified**: None yet
+### Phase 2: GRU Implementation 🔄 IN PROGRESS
+**Status**: In progress (20% complete)
+**Notebook Cells Modified**: 87daaa54
 
-**What needs to be done**:
-- Implement `build_rnn_model()` - 2 stacked GRU layers
-- Compile with Adam, MSE loss, MAE metric
-- Train and track: `rnn_initial_loss`, `rnn_final_loss`, `rnn_training_time`
-- Predict and inverse transform
-- Calculate: `rnn_mae`, `rnn_rmse`, `rnn_mape`, `rnn_r2`
-- Create visualizations (loss curve, predictions, residuals)
+**Completed**:
+- ✅ Implement `build_rnn_model()` - 2 stacked GRU layers with dropout
+
+**Pending**:
+- ⬜ Create GRU model instance
+- ⬜ Compile with Adam, MSE loss, MAE metric
+- ⬜ Train and track: `rnn_initial_loss`, `rnn_final_loss`, `rnn_training_time`
+- ⬜ Predict and inverse transform
+- ⬜ Calculate: `rnn_mae`, `rnn_rmse`, `rnn_mape`, `rnn_r2`
+- ⬜ Create visualizations (loss curve, predictions, residuals)
 
 **Architecture Decisions**:
-- Layer 1: 64 units, return_sequences=True
-- Layer 2: 32 units, return_sequences=False
-- Dropout: 0.2 after each layer
+- Layer 1: 64 units, return_sequences=True, dropout=0.2
+- Layer 2: 32 units, return_sequences=False, dropout=0.2
 - Output: Dense(1)
+- Total layers: 2 GRU + dropouts + Dense output
 
 **Critical Reminders**:
 - ⚠️ Track initial_loss from history.history['loss'][0]
@@ -248,6 +251,7 @@
 7. **ea0da181** (Create Sequences Function): Implemented sliding window approach
 8. **8dlrw5io2g7** (NEW): Applied preprocessing, created sequences, performed 90/10 temporal split
 9. **725e3489** (Train/Test Info): Filled train_test_ratio, train_samples, test_samples dynamically
+10. **87daaa54** (Build RNN Function): Implemented build_rnn_model() - GRU only (removed LSTM, per assignment requirement)
 
 **Values Set**:
 - dataset_name: "Apple Inc. (AAPL) Stock Prices"
