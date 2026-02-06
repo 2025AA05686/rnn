@@ -75,8 +75,8 @@
 ## Phase Progress Tracker
 
 ### Phase 1: Dataset Preparation 🔄 IN PROGRESS
-**Status**: In progress (60% complete)
-**Notebook Cells Modified**: f7883103, ijjp75gtq8o, e2b9ac13, 6ae533b6, d1ljfflwrak, 6efdacdc
+**Status**: In progress (40% complete)
+**Notebook Cells Modified**: f7883103, ijjp75gtq8o, e2b9ac13, 6ae533b6, d1ljfflwrak, 6efdacdc, ea0da181
 
 **Completed**:
 - ✅ Load AAPL data using yfinance (10 years: 2010-2024)
@@ -84,9 +84,10 @@
 - ✅ Implement `preprocess_timeseries()` - uses MinMaxScaler
 - ✅ Add time series visualization
 - ✅ Data quality analysis (no missing values, no outliers)
+- ✅ Implement `create_sequences()` - sliding window approach
 
 **Pending**:
-- ⬜ Implement `create_sequences()` - sliding window approach
+- ⬜ Apply preprocessing and create sequences
 - ⬜ Split 90/10 temporal (critical: NO shuffle)
 - ⬜ Fill: `train_samples`, `test_samples`, `train_test_ratio="90/10"`
 
@@ -246,6 +247,7 @@
 4. **6ae533b6** (Primary Metric): Set primary_metric="MAE" with justification
 5. **d1ljfflwrak** (NEW): Added time series visualization plot
 6. **6efdacdc** (Preprocess Function): Implemented MinMaxScaler normalization
+7. **ea0da181** (Create Sequences Function): Implemented sliding window approach
 
 **Values Set**:
 - dataset_name: "Apple Inc. (AAPL) Stock Prices"
