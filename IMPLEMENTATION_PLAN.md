@@ -102,17 +102,18 @@
 ---
 
 ### Phase 2: GRU Implementation 🔄 IN PROGRESS
-**Status**: In progress (35% complete)
-**Notebook Cells Modified**: 87daaa54, dk61253vqz
+**Status**: In progress (50% complete)
+**Notebook Cells Modified**: 87daaa54, dk61253vqz, vgmpmjfvr4, 02ade3a8
 
 **Completed**:
 - ✅ Implement `build_rnn_model()` - 2 stacked GRU layers with dropout
 - ✅ Create GRU model instance (64 units → 32 units → Dense output)
 - ✅ Compile with Adam optimizer, MSE loss, MAE metric
+- ✅ Train model (100 epochs, batch_size=32, 10% validation split)
+- ✅ Track `rnn_initial_loss` and `rnn_final_loss` from history
 
 **Pending**:
-- ⬜ Train and track: `rnn_initial_loss`, `rnn_final_loss`, `rnn_training_time`
-- ⬜ Predict and inverse transform
+- ⬜ Predict on test set and inverse transform
 - ⬜ Calculate: `rnn_mae`, `rnn_rmse`, `rnn_mape`, `rnn_r2`
 - ⬜ Create visualizations (loss curve, predictions, residuals)
 
@@ -121,6 +122,12 @@
 - Layer 2: 32 units, return_sequences=False, dropout=0.2
 - Output: Dense(1)
 - Total layers: 2 GRU + dropouts + Dense output
+
+**Training Configuration Rationale**:
+- epochs=100: Sufficient for convergence (50-100 typical for stock data), ensures ≥50% loss reduction for full marks
+- batch_size=32: Standard for ~3K samples; balances training speed vs gradient stability (16=too slow, 64=less stable)
+- validation_split=0.1: Monitors overfitting without touching test set; 10% of training data = ~337 validation samples
+- verbose=1: Shows progress bar per epoch for debugging and assignment output visibility
 
 **Critical Reminders**:
 - ⚠️ Track initial_loss from history.history['loss'][0]
@@ -254,6 +261,8 @@
 10. **87daaa54** (Build RNN Function): Implemented build_rnn_model() - GRU only (removed LSTM)
 11. **c800bf2e** (JSON Function): Fixed rnn_model_type from "LSTM" to "GRU"
 12. **dk61253vqz** (NEW): Created and compiled GRU model instance
+13. **vgmpmjfvr4** (NEW): Trained GRU model (100 epochs, batch_size=32, 10% validation)
+14. **02ade3a8**: Tracked initial_loss and final_loss from training history
 
 **Values Set**:
 - dataset_name: "Apple Inc. (AAPL) Stock Prices"
